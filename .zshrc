@@ -1,4 +1,12 @@
+
 # 少し凝った zshrc
+alias julia="/Applications/Julia-0.3.9.app/Contents/Resources/julia/bin/julia"
+
+if [ -x "`which go`" ]; then
+           export GOROOT=`go env GOROOT`
+           export GOPATH=$HOME/code/go-local
+           export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+     fi
 
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH=/Users/kohee/mongodb/bin:$PATH

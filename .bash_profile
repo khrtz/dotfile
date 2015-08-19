@@ -1,7 +1,8 @@
 
+
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+[ -s ${HOME}/.rvm/scripts/rvm ] && source ${HOME}/.rvm/scripts/rvm
 
 export PATH=/usr/local/bin:$PATH
 export ARCHFLAGS="-arch x86_64"
@@ -26,6 +27,6 @@ export PATH=$PATH:/Applications/MAMP/Library/bin
 
 export PATH=/opt/chef/embedded/bin:$PATH
 
+#export PATH=$HOME/.chefdk/gem/ruby/2.1.1/bin:/opt/chefdk/bin:$PATH
 
-
-export PATH=$HOME/.chefdk/gem/ruby/2.1.1/bin:/opt/chefdk/bin:$PATH
+export PATH=$PATH:/Applications/Julia-0.3.9.app/Contents/Resources/julia/bin
