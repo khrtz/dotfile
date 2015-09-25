@@ -9,6 +9,7 @@ export ARCHFLAGS="-arch x86_64"
 export PGDATA="/usr/local/var/postgres"
 alias cot='open -g -a CotEditor' # ターミナルからCotEditorを開く
 
+code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* }
 
 #export NVM_DIR="/Users/kohee/.nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
