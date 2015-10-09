@@ -31,3 +31,4 @@ export PATH=/opt/chef/embedded/bin:$PATH
 #export PATH=$HOME/.chefdk/gem/ruby/2.1.1/bin:/opt/chefdk/bin:$PATH
 
 export PATH=$PATH:/Applications/Julia-0.3.9.app/Contents/Resources/julia/bin
+
