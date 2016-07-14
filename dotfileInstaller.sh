@@ -1,10 +1,10 @@
 #! /bin/bash
 
-ln -s ~/dotfiles/.gitconfig ~/.gitconfig
-ln -s ~/dotfiles/.gitignore ~/.gitignore
-ln -s ~/dotfiles/.vim/ ~/.vim
-ln -s ~/dotfiles/.vimrc ~/.vimrc
-ln -s ~/dotfiles/.zsh/ ~/.zsh
-ln -s ~/dotfiles/.zshrc ~/.zshrc
-ln -s ~/dotfiles/.bashrc ~/.bashrc
-ln -s ~/dotfiles/.bash_profile ~/.bash_profile
+ln -s ~/dotfile/.gitconfig ~/.gitconfig
+ln -s ~/dotfile/.gitignore ~/.gitignore
+ln -s ~/dotfile/.vim/ ~/.vim
+ln -s ~/dotfile/.vimrc ~/.vimrc
+ln -s ~/dotfile/.zsh/ ~/.zsh
+ln -s ~/dotfile/.zshrc ~/.zshrc
+ln -s ~/dotfile/.bashrc ~/.bashrc
+ln -s ~/dotfile/.bash_profile ~/.bash_profile

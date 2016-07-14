@@ -2,6 +2,9 @@
 # 少し凝った zshrc
 alias julia="/Applications/Julia-0.3.9.app/Contents/Resources/julia/bin/julia"
 
+
+
+
 if [ -x "`which go`" ]; then
            export GOROOT=`go env GOROOT`
            export GOPATH=$HOME/code/go-local
@@ -248,3 +251,10 @@ export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
 
 PERL_MB_OPT="--install_base \"/Users/kohee/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/kohee/perl5"; export PERL_MM_OPT;
+
+PATH=/bin:/usr/bin:/usr/local/bin:${PATH}
+
+
+export PATH="$PATH:$HOME/.rbenv/bin"
+eval "$(rbenv init - zsh)"
+
