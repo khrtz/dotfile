@@ -1,9 +1,17 @@
 
+PATH="/Users/khrtz/GitHub/Pokemon-Terminal:${PATH}"
 # 少し凝った zshrc
 alias julia="/Applications/Julia-0.3.9.app/Contents/Resources/julia/bin/julia"
 
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f /Users/a14504/google-cloud-sdk/path.zsh.inc ]; then
+  source '/Users/a14504/google-cloud-sdk/path.zsh.inc'
+fi
 
-
+# The next line enables shell command completion for gcloud.
+if [ -f /Users/a14504/google-cloud-sdk/completion.zsh.inc ]; then
+  source '/Users/a14504/google-cloud-sdk/completion.zsh.inc'
+fi
 
 if [ -x "`which go`" ]; then
            export GOROOT=`go env GOROOT`
@@ -21,12 +29,6 @@ export PATH=/Users/kohee/mongodb/bin:$PATH
 export LANG=ja_JP.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-
-alias coteditor='open -a CotEditor'
-
-#alias emacs="TERM=xterm-256color /usr/local/bin/emacs"
-
-
 
 # 色を使用出来るようにする
 autoload -Uz colors
@@ -208,53 +210,14 @@ case ${OSTYPE} in
         ;;
 esac
 
-# vim:set ft=zsh:
-
-alias code="open -g -a /Applications/Visual\ Studio\ Code.app"
-
-# Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
-export COCOS_CONSOLE_ROOT=/Users/kohee/Downloads/cocos2d-x/tools/cocos2d-console/bin
-export PATH=$COCOS_CONSOLE_ROOT:$PATH
-
-# Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
-export COCOS_TEMPLATES_ROOT=/Users/kohee/Downloads/cocos2d-x/templates
-export PATH=$COCOS_TEMPLATES_ROOT:$PATH
-
-# Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
-export COCOS_CONSOLE_ROOT=/Users/kohee/Downloads/cocos2d-x-3.4/tools/cocos2d-console/bin
-export PATH=$COCOS_CONSOLE_ROOT:$PATH
-
-# Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
-export COCOS_TEMPLATES_ROOT=/Users/kohee/Downloads/cocos2d-x-3.4/templates
-export PATH=$COCOS_TEMPLATES_ROOT:$PATH
-
-# Add environment variable NDK_ROOT for cocos2d-x
-export NDK_ROOT=/Applications/android/ndk-r9d
-export PATH=$NDK_ROOT:$PATH
-
-# Add environment variable ANT_ROOT for cocos2d-x
-export ANT_ROOT=/usr/local/Cellar/ant/1.9.4/libexec/bin
-export PATH=$ANT_ROOT:$PATH
-
-# Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
-export COCOS_CONSOLE_ROOT=/Users/kohee/cocos2d-x-3.4/tools/cocos2d-console/bin
-export PATH=$COCOS_CONSOLE_ROOT:$PATH
-
-# Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
-export COCOS_TEMPLATES_ROOT=/Users/kohee/cocos2d-x-3.4/templates
-export PATH=$COCOS_TEMPLATES_ROOT:$PATH
-
-# Add environment variable ANDROID_SDK_ROOT for cocos2d-x
-export ANDROID_SDK_ROOT=/Applications/Android/sdk
-export PATH=$ANDROID_SDK_ROOT:$PATH
-export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
-
-PERL_MB_OPT="--install_base \"/Users/kohee/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/Users/kohee/perl5"; export PERL_MM_OPT;
-
 PATH=/bin:/usr/bin:/usr/local/bin:${PATH}
-
 
 export PATH="$PATH:$HOME/.rbenv/bin"
 eval "$(rbenv init - zsh)"
 
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
