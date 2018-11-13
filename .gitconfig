@@ -36,6 +36,8 @@
 	required = true
 [core]
 	excludesfile = /Users/kohee/.gitignore_global
+	editor = emacs -c \"set fenc=utf-8\"
+	autoCRLF = false
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
