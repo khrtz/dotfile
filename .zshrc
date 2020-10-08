@@ -13,13 +13,14 @@ if [ -f /Users/a14504/google-cloud-sdk/completion.zsh.inc ]; then
   source '/Users/a14504/google-cloud-sdk/completion.zsh.inc'
 fi
 
-if [ -x "`which go`" ]; then
-           export GOROOT=`go env GOROOT`
-           export GOPATH=$HOME/code/go-local
-           export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-     fi
+export GOENV_ROOT=$HOME/.goenv
+export PATH=$GOENV_ROOT/bin:$PATH
+eval "$(goenv init -)"
+export PATH="$GOROOT/bin:$PATH"
+export PATH="$PATH:$GOPATH/bin"
 
-export PATH=$HOME/.nodebrew/current/bin:$PATH
+export GOPATH=$HOME/go
+
 export PATH=/Users/kohee/mongodb/bin:$PATH
 # License : MIT
 # http://mollifier.mit-license.org/
@@ -212,12 +213,38 @@ esac
 
 PATH=/bin:/usr/bin:/usr/local/bin:${PATH}
 
-export PATH="$PATH:$HOME/.rbenv/bin"
-eval "$(rbenv init - zsh)"
-
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+export PATH="$HOME/.nodenv/bin:$PATH"
+eval "$(nodenv init -)"
+
+export PATH="$HOME/.yarn/bin:$PATH"
+
+export PATH="$PATH:$HOME/gactionsCLI"
+export PATH=$PATH:/Users/a14504/Library/Android/sdk/platform-tools
+
+alias docker-purge='docker stop $(docker ps -q) && docker rmi $(docker images -q) -f'
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/a14504/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/a14504/google-cloud-sdk/completion.zsh.inc'; fi
+
+# PHP
+export PATH=$PATH:/usr/local/opt/php@7.1/bin/php
+
+# Ruby
+[[ -d ~/.rbenv  ]] && \
+  export PATH=${HOME}/.rbenv/bin:${PATH} && \
+  eval "$(rbenv init -)"
+PATH="$PATH:./node_modules/.bin"
+
+# export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-14.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home/
+
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/a14504/.sdkman"
+[[ -s "/Users/a14504/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/a14504/.sdkman/bin/sdkman-init.sh"
+
+export PATH="$HOME/.jenv/bin:$PATH"
+  eval "$(jenv init -)"
